@@ -1,0 +1,32 @@
+# Gerando uma amostra aleatoria de 1 numero, intervalo de 1 a 6
+sample(1:6, 1, replace=TRUE)
+
+
+
+#Gerando um jogo contra a máquina, na qual escolhe ímpar ou par, digite um número e rode o resultado aleatoriamente
+
+jogo = function(eu, escolha){
+  
+  maquina = sample(1:10, 1, replace=TRUE)
+  
+  cat("\n O valor digitado foi: ", eu)
+  cat("\n O valor da máquina foi:",maquina)
+  
+  contar = (maquina + eu)
+  
+  if(((contar %% 2)== 0) & (escolha == "p"))
+    cat("\n você ganhou")
+  else
+    if(((contar %% 2)== 0) & (escolha == "i"))
+      cat("\n a máquina ganhou.")
+  else
+    if(((contar %% 2)!=0) & (escolha == "i"))
+      cat("\n você ganhou.")
+  else
+    if(((contar %% 2)!= 0) & (escolha == "p"))
+      cat("\n a máquina ganhou.")
+
+}
+
+
+jogo(1, "p")
